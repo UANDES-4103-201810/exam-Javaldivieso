@@ -1,0 +1,27 @@
+<%= form_with(model: shopping, local: true) do |form| %>
+  <% if shopping.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shopping.errors.count, "error") %> prohibited this shopping from being saved:</h2>
+
+      <ul>
+      <% shopping.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :pizza_id %>
+    <%= form.number_field :pizza_id, id: :shopping_pizza_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :shopping_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

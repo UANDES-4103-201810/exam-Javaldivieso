@@ -1,0 +1,27 @@
+<%= form_with(model: repiceingrediente, local: true) do |form| %>
+  <% if repiceingrediente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(repiceingrediente.errors.count, "error") %> prohibited this repiceingrediente from being saved:</h2>
+
+      <ul>
+      <% repiceingrediente.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ingredient_id %>
+    <%= form.number_field :ingredient_id, id: :repiceingrediente_ingredient_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :repice_id %>
+    <%= form.number_field :repice_id, id: :repiceingrediente_repice_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

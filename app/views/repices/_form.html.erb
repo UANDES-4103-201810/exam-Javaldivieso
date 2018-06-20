@@ -1,0 +1,22 @@
+<%= form_with(model: repice, local: true) do |form| %>
+  <% if repice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(repice.errors.count, "error") %> prohibited this repice from being saved:</h2>
+
+      <ul>
+      <% repice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :repice_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

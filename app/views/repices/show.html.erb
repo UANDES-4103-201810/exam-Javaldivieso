@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Repiceingredient:</strong>
+  <%= @repice.Repiceingredient_id %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @repice.price %>
+</p>
+
+<%= link_to 'Edit', edit_repice_path(@repice) %> |
+<%= link_to 'Back', repices_path %>

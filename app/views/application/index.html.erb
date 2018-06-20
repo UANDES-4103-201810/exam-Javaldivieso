@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pizzas</h1>
+
+<br>
+<% @pizzas.each do |project| %>
+      <div class="row">
+        <div class="col-lg-10 portfolio-item">
+          <div class="card h-100">
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href=''><td><%= link_to project.name, project %></td></a>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+<% end %>

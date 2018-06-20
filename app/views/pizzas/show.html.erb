@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<strong>Crust:</strong>
+<% @crusts.each do |crust| %>
+<% if @pizza.crust_id == crust.id %>
+  <%= crust.tipo %>
+<% end %>
+<% end %>
+</p>
+
+<p>
+  <strong>Ingredient:</strong>
+  <% @repiceingredientes.each do |repiceingrediente| %>
+      <tr>
+	<% if @repices_id == repiceingrediente.repice_id %>
+        <td><%= repiceingrediente.ingredient.name %></td>
+        <td><%= repiceingrediente.repice_id %></td>
+        <td><%= link_to 'Show', repiceingrediente %></td>
+        <td><%= link_to 'Edit', edit_repiceingrediente_path(repiceingrediente) %></td>
+        <td><%= link_to 'Destroy', repiceingrediente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+<% end %>
+</p>
+
+<%= button_to "Add Carro", {:controller => "shoppings", :action => "create", :user_id => current_user.try(:id), :pizza_id => @pizza.id, :method => :"post"} %> 
+
+<%= link_to 'Edit', edit_pizza_path(@pizza) %> |
+<%= link_to 'Back', pizzas_path %>
